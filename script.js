@@ -1,46 +1,39 @@
-// Dark/Light Theme Toggle
-const toggleTheme = () => {
-  const themeToggle = document.getElementById('theme-toggle');
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-  });
-};
-
 // Scroll-to-Top Button
-const setupScrollToTop = () => {
-  const scrollTopButton = document.getElementById('scroll-top');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      scrollTopButton.classList.add('show');
-    } else {
-      scrollTopButton.classList.remove('show');
-    }
-  });
+const scrollTopBtn = document.getElementById("scroll-top");
 
-  scrollTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-};
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+});
 
-// Content Animation on Scroll
-const setupContentAnimations = () => {
-  const animatedSections = document.querySelectorAll('.fade-in');
-  const showOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.9;
-    animatedSections.forEach((section) => {
-      if (section.getBoundingClientRect().top < triggerBottom) {
-        section.classList.add('show');
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Intersection Observer for Animations
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
       }
     });
-  };
+  },
+  { threshold: 1.5 }
+);
 
-  window.addEventListener('scroll', showOnScroll);
-  document.addEventListener('DOMContentLoaded', showOnScroll);
-};
+sections.forEach((section) => observer.observe(section));
 
-// Initialize Scripts
-document.addEventListener('DOMContentLoaded', () => {
-  toggleTheme();
-  setupScrollToTop();
-  setupContentAnimations();
-});
+// Leaderboard Carousel Interaction
+const carousel = document.querySelector(".carousel");
+let carouselIndex = 0;
+
+setInterval(() => {
+  carouselIndex = (carouselIndex + 1) % carousel.children.length;
+  carousel.style.transform = translateX(-${carouselIndex * 100}%);
+}, 3000);
