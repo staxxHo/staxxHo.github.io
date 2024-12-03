@@ -90,7 +90,7 @@ header nav {
   color: var(--text-color);
   background: var(--primary-color);
   border-radius: 8px;
-  animation: carousel-scroll 6s linear infinite;
+  animation: carousel-scroll 35s linear infinite;
 }
 
 /* Filter Input */
