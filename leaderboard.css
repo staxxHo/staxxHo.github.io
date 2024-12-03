@@ -164,7 +164,7 @@ main {
   background: rgba(255, 86, 86, 0.2);
   color: var(--primary-color);
   font-weight: bold;
-  transform: scale(1.05);
+  transform: scale(1);
   transition: all 0.3s ease;
 }
 
