@@ -1,0 +1,26 @@
+/* Main Content */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center vertically */
+  min-height: calc(100vh - 150px); /* Adjust height to exclude header and footer */
+  padding: 1rem;
+}
+
+/* Leaderboard Sections */
+.leaderboard-section {
+  width: 90%;
+  max-width: 800px;
+  margin: 1rem 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
