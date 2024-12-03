@@ -144,8 +144,8 @@ main {
 
 /* Leaderboard Table */
 .leaderboard-table {
-  width: 90%;
-  max-width: 800px;
+  width: 95%;
+  max-width: 1080px;
   margin: 1rem auto;
   border-collapse: collapse;
   text-align: center;
