@@ -59,10 +59,13 @@ header nav {
 }
 
 /* Main Content */
-.hero {
-  text-align: center;
-  padding: 4rem 1rem;
-  animation: fade-in 1.5s ease-in-out;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center vertically */
+  min-height: calc(100vh - 150px); /* Adjust height to exclude header and footer */
+  padding: 1rem;
 }
 
 .highlight {
