@@ -3,31 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leaderboard</title>
+  <meta name="description" content="Staxx Leaderboard - Compete for monthly and weekly prizes in style!">
+  <meta name="author" content="staxx, Kutu Loncats, Scooby, jam">
+  <meta name="keywords" content="staxx, leaderboard, gambling competition, online casino, crypto casino, rewards">
+  <title>Leaderboard | StaxX Community</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <script src="script.js" defer></script>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1>Leaderboard</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="raffle.html">Raffle</a>
+      <a href="index.html" id="logo">
+        <img src="logo.png" alt="Staxx Logo" height="50" loading="lazy">
+      </a>
+      <div class="nav-links">
+        <a href="leaderboard.html" aria-current="page">Leaderboard</a>
+        <span class="special-text">StaxX💣</span>
+        <a href="index.html">Home</a>
+      </div>
     </nav>
-    <button id="theme-toggle">Toggle Theme</button>
   </header>
+
+  <!-- Main Content -->
   <main>
-    <section id="weekly-leaderboard">
-      <h2>Weekly Top 10</h2>
-      <ul id="weekly-list"></ul>
+    <!-- Filter Input -->
+    <div class="filter-wrapper">
+      <input type="text" id="filter-input" placeholder="Search leaderboard..." aria-label="Search leaderboard by username or rank">
+    </div>
+
+    <!-- Monthly Leaderboard -->
+    <section class="leaderboard-section" aria-labelledby="monthly-leaderboard">
+      <h1 id="monthly-leaderboard" class="section-heading">Monthly Leaderboard</h1>
+      <p class="prize-pool">🏆 Prize Pool: <span class="highlight">$10,000</span></p>
+      <table class="leaderboard-table" aria-label="Monthly Leaderboard">
+        <thead>
+          <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Username</th>
+            <th scope="col">Wager</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>UserA</td>
+            <td>$124,567.89</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>UserB</td>
+            <td>$12,345.78</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>UserC</td>
+            <td>$1,234.56</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="additional-info">Top 5 Biggest Wagers in a Month</p>
     </section>
-    <section id="monthly-leaderboard">
-      <h2>Monthly Top 10</h2>
-      <ul id="monthly-list"></ul>
+
+    <!-- Weekly Raffle -->
+    <section class="leaderboard-section" aria-labelledby="weekly-raffle">
+      <h1 id="weekly-raffle" class="section-heading">Weekly Raffle</h1>
+      <p class="prize-pool">🏆 Prize Pool: <span class="highlight">$1,000</span></p>
+      <p class="instructions">For every $500 wagered, you earn 1 raffle ticket!</p>
+      <table class="leaderboard-table" aria-label="Weekly Raffle">
+        <thead>
+          <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Username</th>
+            <th scope="col">Wager</th>
+            <th scope="col">Tickets</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>UserA</td>
+            <td>$124,567.89</td>
+            <td>55</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>UserB</td>
+            <td>$12,345.78</td>
+            <td>24</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </main>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2024 Staxx Ldb</p>
+    <p>© 2024 StaxX . All rights reserved.</p>
+    <p><a href="https://staxxHo.github.io" target="_blank" rel="noopener noreferrer">Visit Us</a></p>
   </footer>
+
+  <!-- Scroll-to-Top Button -->
+  <button id="scroll-top" aria-label="Scroll to top">↑</button>
 </body>
 </html>
