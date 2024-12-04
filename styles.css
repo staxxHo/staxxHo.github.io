@@ -208,7 +208,7 @@ body {
 }
 
 /* Styles for PC users (screen width larger than 1024px) */
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
   body {
     background-color: lightblue;
   }
