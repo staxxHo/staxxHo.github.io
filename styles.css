@@ -206,10 +206,3 @@ body {
 body {
   background-color: white;
 }
-
-/* Styles for PC users (screen width larger than 1024px) */
-@media (min-width: 800px) {
-  body {
-    background-color: lightblue;
-  }
-}
