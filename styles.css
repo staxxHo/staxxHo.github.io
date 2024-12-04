@@ -202,10 +202,14 @@ footer {
 body {
   background-color: white;
 }
+/* Default styles (for all devices) */
+body {
+  background-color: white;
+}
 
 /* Styles for PC users (screen width larger than 1024px) */
 @media (min-width: 1024px) {
   body {
-    background-color: lightblue; /* Change this to any color you prefer */
+    background-color: lightblue;
   }
 }
