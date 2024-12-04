@@ -29,7 +29,7 @@
     <!-- Roll Game Section -->
     <section class="roll-game">
       <h1>🎲 Roll & Win</h1>
-      <p>Spin to get RISH.</p>
+      <p>Spin the slots to test your luck! Match numbers to win exciting rewards.</p>
       <button onclick="startRoll()">Start Rolling</button>
       <div class="roller">
         <div class="item"><span id="roll1">0</span></div>
@@ -38,3 +38,53 @@
       </div>
       <p id="rollResult"></p>
     </section>
+
+    <!-- Sports Poll Section -->
+    <section class="poll">
+      <h1>🏅 Sports Poll</h1>
+      <form id="pollForm">
+        <fieldset>
+          <legend>⚽️ Ticket 1</legend>
+          <label for="game1">TeamA vs TeamB:</label>
+          <select name="game1" id="game1">
+            <option value="win">Win</option>
+            <option value="draw">Draw</option>
+            <option value="loss">Loss</option>
+          </select>
+          <br>
+          <label for="game2">TeamC vs TeamD:</label>
+          <select name="game2" id="game2">
+            <option value="win">Win</option>
+            <option value="draw">Draw</option>
+            <option value="loss">Loss</option>
+          </select>
+          <br>
+          <label for="game3">TeamE vs TeamF:</label>
+          <select name="game3" id="game3">
+            <option value="win">Win</option>
+            <option value="draw">Draw</option>
+            <option value="loss">Loss</option>
+          </select>
+          <br>
+          <label for="game4">TeamG vs TeamH:</label>
+          <select name="game4" id="game4">
+            <option value="win">Win</option>
+            <option value="draw">Draw</option>
+            <option value="loss">Loss</option>
+          </select>
+        </fieldset>
+        <button type="button" onclick="submitPoll()">Submit Poll</button>
+      </form>
+      <div id="pollResults">
+        <h3>Live Poll Results</h3>
+        <ul>
+          <li>TeamA vs TeamB: <span id="game1Stats">Win: 40%, Draw: 30%, Loss: 30%</span></li>
+          <li>TeamC vs TeamD: <span id="game2Stats">Win: 50%, Draw: 25%, Loss: 25%</span></li>
+          <li>TeamE vs TeamF: <span id="game3Stats">Win: 33%, Draw: 34%, Loss: 33%</span></li>
+          <li>TeamG vs TeamH: <span id="game4Stats">Win: 80%, Draw: 20%, Loss: 0%</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html
