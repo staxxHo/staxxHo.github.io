@@ -71,18 +71,42 @@ if (prizePoolElements.length) {
 
 // Roll Game Function
 function startRoll() {
-  const slots = [document.getElementById("roll1"), document.getElementById("roll2"), document.getElementById("roll3")];
-  const rollingIntervals = slots.map(slot => setInterval(() => {
-    slot.textContent = Math.floor(Math.random() * 10);
-  }, 100));
+  // Get slot elements
+  const slots = [
+    document.getElementById("roll1"),
+    document.getElementById("roll2"),
+    document.getElementById("roll3")
+  ];
 
-  setTimeout(() => clearInterval(rollingIntervals[2]), 1000);
-  setTimeout(() => clearInterval(rollingIntervals[1]), 2000);
+  // Check if all slot elements are present
+  if (slots.some(slot => slot === null)) {
+    console.error("Error: One or more slot elements (roll1, roll2, roll3) are missing from the DOM.");
+    return;
+  }
+
+  // Start rolling the slots
+  const rollingIntervals = slots.map(slot =>
+    setInterval(() => {
+      slot.textContent = Math.floor(Math.random() * 10); // Random number between 0-9
+    }, 100)
+  );
+
+  // Stop the slots at staggered intervals
+  setTimeout(() => clearInterval(rollingIntervals[2]), 1000); // Third slot stops after 1 second
+  setTimeout(() => clearInterval(rollingIntervals[1]), 2000); // Second slot stops after 2 seconds
   setTimeout(() => {
-    clearInterval(rollingIntervals[0]);
-    const results = slots.map(slot => parseInt(slot.textContent));
-    const resultText = results.join(", ");
+    clearInterval(rollingIntervals[0]); // First slot stops after 3 seconds
 
+    // Collect and validate results
+    const results = slots.map(slot => parseInt(slot.textContent));
+    if (results.some(isNaN)) {
+      console.error("Error: One or more slots have invalid values.");
+      document.getElementById("rollResult").textContent = "❌ Error: Invalid roll results.";
+      return;
+    }
+
+    // Generate result message
+    const resultText = results.join(", ");
     let message = Results: ${resultText};
     if (new Set(results).size === 1) {
       message += " 🎉 Jackpot!";
@@ -91,22 +115,13 @@ function startRoll() {
     } else {
       message += " ❌ Try again!";
     }
-    document.getElementById("rollResult").textContent = message;
+
+    // Display result
+    const resultContainer = document.getElementById("rollResult");
+    if (resultContainer) {
+      resultContainer.textContent = message;
+    } else {
+      console.error("Error: Result container (rollResult) not found.");
+    }
   }, 3000);
-}
-
-// Poll Submission Function
-function submitPoll() {
-  const form = document.getElementById("pollForm");
-  const formData = new FormData(form);
-  const results = {};
-
-  formData.forEach((value, key) => {
-    results[key] = value;
-  });
-
-  alert(Your choices have been submitted: ${JSON.stringify(results, null, 2)});
-  // Update mock stats
-  document.getElementById("game1Stats").textContent = "Win: 45%, Draw: 35%, Loss: 20%";
-  document.getElementById("game2Stats").textContent = "Win: 50%, Draw: 30%, Loss: 20%";
 }
