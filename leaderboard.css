@@ -154,11 +154,7 @@ main {
   background: rgba(0, 0, 0, 0.9);
 }
 
-.leaderboard-table th{
-  {
-  Padding: 0.8rem;
-  border: 1px solid var(--secondary-color);
-}
+.leaderboard-table th,
 .leaderboard-table td {
   padding: 0.8rem;
   border: 1px solid var(--secondary-color);
