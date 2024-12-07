@@ -69,8 +69,28 @@ header nav {
   color: var(--primary-color);
 }
 
-.promo-section,
 .community {
+  text-align: center;
+  padding: 0.5rem 1rem; /* Removed the duplicate padding */
+  font-size: 1rem;
+  border: 2px solid #FFD700;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  background: none;
+  color: var(--text-color);
+  margin: auto; /* Centers the content block within its parent */
+}
+
+#community-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Ensures content is vertically centered if height increases */
+  margin: 2rem 0;
+}
+
+
+.promo-section {
   text-align: center;
   padding: 2rem 1rem;
 }
@@ -197,12 +217,4 @@ footer {
   #filter-input {
     width: 90%;
   }
-}
-/* Default styles (for all devices) */
-body {
-  background-color: white;
-}
-/* Default styles (for all devices) */
-body {
-  background-color: white;
 }
