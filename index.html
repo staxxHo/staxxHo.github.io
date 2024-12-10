@@ -13,6 +13,7 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div id="background-animation"></div>
   <!-- Header -->
   <header>
     <nav>
@@ -26,27 +27,38 @@
   </header>
 
   <main>
-    <section class="hero fade-in">
-      <h1>Welcome to <span class="highlight">StaxX💣</span></h1>
-  <img src="main2.gif" alt="Main Animation" class="main-gif">
+    <h1 class="typing-effect">Welcome to</h1>
+      <div class="text-outline">StaxX💣</div>
+      
+    <section id="promo-section">
+      <img src="main2.gif" alt="Main Animation" class="main-gif">
       <p><a href="https://swee.ps/CsXjYi_thuYqy"><button class="cta-btn">Sign up</button></a></p>
     </section>
     
-    <section class="community">
-      <h2>Join Our Community</h2>
-      <p><a href="https://t.me/LfgXScooby" target="_blank" rel="noopener noreferrer">Telegram Group</a></p>
-      <p><a href="https://x.com/Scoobyslots99" target="_blank" rel="noopener noreferrer">Twitter</a></p>
-      <p><a href="https://kick.com/scoobyslots" target="_blank" rel="noopener noreferrer">Kick</a></p>
-      <p><a href="https://discord.gg/S4Ezh6A8" target="_blank" rel="noopener noreferrer">Discord</a></p>
+    <section id="features">
+      <div><h2>Join Our Community</h1></div>
+      <div class="feature-howver">
+        <p class="feature">
+          <img src="telegram.png" alt="Telegram" height="18"><a href="https://t.me/LfgXScooby" target="_blank" rel="noopener noreferrer"> Telegram</a></p>
+        <p class="feature">
+          <img src="twitter.png" alt="Twitter" height="18"><a href="https://x.com/Scoobyslots99" target="_blank" rel="noopener noreferrer">Twitter</a>
+          </p>
+        <p class="feature">
+          <img src="kick.png" alt="Kick" height="18"><a href="https://kick.com/scoobyslots" target="_blank" rel="noopener noreferrer">Kick</a>
+          </p>
+        <p class="feature">
+          <img src="discord.png" alt="Discord" height="18"><a href="https://discord.gg/S4Ezh6A8" target="_blank" rel="noopener noreferrer">Discord</a>
+          </p>
+      </div>
     </section>
     
-    <section class="promo-section">
-      <h2>Our first Leaderboard will begin on launch of LFG originals</h2>
+    <section id="promo-section">
+      <h3 class="fade-in">Our first Leaderboard will begin on launch of</h3>
+      <h2><span class="highlight">LFG Original</span></h2>
     </section>
     
-    
-    <section class="promo-section">
-      <h3>New Leaderboard <span class="highlight">$10 000</span></h3>
+    <section id="promo-section">
+      <h3 class="promo-howver">New Leaderboard<span class="highlight"> $10 000</span></h3>
       <img src="main.gif" alt="Pre Registration Animation" class="main-gif">      
     </section>
     
@@ -58,17 +70,13 @@
         <div class="carousel-item">jam9 - $76,538 wager</div>
       </div>
     </section>
-
   </main>
 
-  <!-- Footer -->
   <footer>
-    <p>© 2024 StaxX . All rights reserved.</p>
-    <p>
-    </p>
+    <p class="fade-in"> © 2024 StaxX . All rights reserved.</p>
   </footer>
-
   <!-- Scroll-to-Top Button -->
   <button id="scroll-top" aria-label="Scroll to top">↑</button>
+  <script src="scripts.js" defer></script>
 </body>
 </html>
