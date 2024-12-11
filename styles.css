@@ -23,7 +23,7 @@ body {
   height: 100%;
   background: linear-gradient(45deg, #000000, #4d0000, #000000, #ff0016);
   background-size: 300% 300%;
-  animation: gradient-animation 18s linear infinite; /* Slower, smooth animation */
+  animation: gradient-animation 18s linear infinite;
   z-index: -1;
 }
 
@@ -45,10 +45,19 @@ body {
   }
 }
 
-.hero {
-  text-align: center;
-  padding: 50px 20px;
-  animation: fadeIn 1s ease-in-out;
+/* New Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.promo-section, #features, #faq {
+  animation: fade-in-up 1.5s ease-in-out;
 }
 
 header nav {
@@ -74,13 +83,42 @@ section {
   text-align: center;
 }
 
+/* Features Section Styles */
+#features .feature-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Adds spacing between feature items */
+  align-items: flex-start;
+}
+
 #features .feature {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+  transition: transform 0.3s ease, background 0.3s ease;
   margin: 20px auto;
   max-width: 400px;
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#features .feature img {
+  flex-shrink: 0; /* Prevent icon from resizing */
+}
+
+#features .feature a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+#features .feature a:hover {
+  transform: translateY(-2px);
+  color: #ff5733; /* Change text color on hover */
+  text-decoration: underline;
 }
 
 #features .feature:hover {
@@ -173,77 +211,5 @@ section {
   }
   100% {
     text-shadow: 0 0 18px #ff5733, 0 0 25px #ff5733;
-  }
-}
-
-.cta-btn {
-  padding: 10px 20px;
-  background: #ff5733;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out;
-}
-
-.cta-btn:hover {
-  transform: scale(1.05);
-}
-
-.cta-btn:active::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200%;
-  height: 200%;
-  background: rgba(255, 255, 255, 0.2);
-  transform: translate(-50%, -50%) scale(0);
-  border-radius: 50%;
-  animation: ripple 0.6s ease-out;
-}
-
-@keyframes ripple {
-  to {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0;
-  }
-}
-
-@keyframes scrollCarousel {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@media (max-width: 1080px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-  button {
-    padding: 0.5rem 1rem;
-  }
-
-  .promo-img,
-  .main-gif {
-    width: 90%;
-    height: auto;
-  }
-  .leaderboard-table td {
-    font-size: 0.9rem;
-    padding: 0.5rem;
-  }
-
-  .filter-wrapper {
-    margin: 1.5rem 0;
-  }
-
-  #filter-input {
-    width: 90%;
   }
 }
